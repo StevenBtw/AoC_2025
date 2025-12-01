@@ -16,4 +16,4 @@ A different language/tool for each day.
 | 10  | ?             |
 | 11  | ?             |
 | 12  | ?             |
-| ... | ...           |
+|-----|---------------|
