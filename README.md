@@ -16,3 +16,16 @@ A different language/tool for each day.
 | 10  | ?             |
 | 11  | ?             |
 | 12  | ?             |
+| ... | ...           |
+
+---
+
+## Bingo Card
+
+This year speed is not a priority, getting outside of my comfort zone is.
+
+| | | | |
+|:---:|:---:|:---:|:---:|
+| Python | Rust | WebGPU | Bash |
+| Prolog | SQL | ~~Excel~~ | CUDA |
+| Arduino | Joker | Joker | Joker |
