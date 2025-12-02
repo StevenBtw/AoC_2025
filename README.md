@@ -16,7 +16,7 @@ A different tool (software, language or library) for each day.
 | Rust | SQL | WebGPU |
 
 ---
-
+## Picks 
 <details>
 <summary><strong>Why did I pick these tools?</strong></summary>
 
@@ -36,7 +36,7 @@ A different tool (software, language or library) for each day.
 </details>
 
 ---
-
+## Log
 | Day | Tool | Rationale | Difficulty | Minutes |
 |-----|------|-----------|------------|---------|
 | [1](day1/)   | Excel | Good problem to tick off excel | Easy  | 13/15    |
