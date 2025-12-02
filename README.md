@@ -37,9 +37,9 @@ A different tool (software, language or library) for each day.
 
 ---
 ## Log
-| Day | Tool | Rationale | Difficulty | Minutes |
+| Day | Tool | Rationale/Experience | Rating | Minutes |
 |-----|------|-----------|------------|---------|
-| [1](day1/)   | Excel | Good problem to tick off excel | Easy  | 13/15    |
+| [1](day1/)   | Excel | Good problem to tick off excel reused most for part 2 | Easy  | 13/15    |
 | [2](day2/) | Bash | Used Termux on android, part 1 was straightforward, got stuck a bit on part 2, mainly because long processing time complicated it  |   Easy    |  19/54    |
 | 3   | ?    |           |            |         |
 | 4   | ?    |           |            |         |
