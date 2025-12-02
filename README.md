@@ -27,7 +27,7 @@ A different tool (software, language or library) for each day.
 - **Marimo:** definitely a flex pick, replaced all my EDA notebooks and light UI with Marimo, goal is to use the interactive nature of Marimo for a problem that is suited for it (like day 8 '22).
 - **MATLAB:** used this 15 years ago for the last time, liked it then.
 - **NetworkX:** went deep into networkx last year and really enjoyed getting back into graph algorithms.
-- **OpenVINO:** want to do one edge-inference style solution with an old Intel Neural Compute Stick 2.
+- **OpenVINO:** want to do one edge-inference style solution with an old Intel Neural Compute Stick 2, will probably regret this pick.
 - **OR-Tools:** it's often not ideal, but I want to solve using solvers at least once.
 - **Rust:** have been learning Rust for the last year and a half, still struggling a bit though.
 - **SQL:** SQL can JOIN this year too.
