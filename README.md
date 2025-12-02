@@ -24,8 +24,9 @@ A different language/tool for each day.
 
 This year speed is not a priority, getting outside of my comfort zone is.
 
-| | | | |
-|:---:|:---:|:---:|:---:|
-| Python | Rust | WebGPU | ~~Bash~~ |
-| Prolog | SQL | ~~Excel~~ | CUDA |
-| Arduino | Joker | Joker | Joker |
+|         |         |        |
+|:-------:|:-------:|:-------:|
+| Joker   | Joker   | Joker   |
+| Arduino | ~~Bash~~ | CUDA   |
+| ~~Excel~~ | Prolog  | Python |
+| Rust    | SQL     | WebGPU  |
