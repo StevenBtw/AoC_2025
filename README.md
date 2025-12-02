@@ -5,7 +5,7 @@ A different language/tool for each day.
 | Day | Language/Tool |
 |-----|---------------|
 | 1   | Excel         |
-| 2   | ?             |
+| 2   | Bash          |
 | 3   | ?             |
 | 4   | ?             |
 | 5   | ?             |
