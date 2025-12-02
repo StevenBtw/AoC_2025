@@ -24,7 +24,7 @@ A different tool (software, language or library) for each day.
 
 12 days, 12 options, pick wisely. 
 
-|  |    |    |
+|      |      |      |
 |:----:|:----:|:-----:|
 | ~~Bash~~ | CUDA | ~~Excel~~ |
 | Julia | Marimo | MATLAB |
@@ -36,9 +36,9 @@ A different tool (software, language or library) for each day.
 ## Why did I pick these tools? 
 
 - **Bash:** used bash a lot the last years and want to try some parsing with it.  
-- **CUDA:** brute forced day 11 last year (blinking intensifies) using CuPy and actually had a lot of fun, want to try and write my own kernel for a problem that is more fitting this year.  
+- **CUDA:** new for me, brute forced day 11 last year (blinking intensifies) using CuPy and actually had a lot of fun, want to try and write my own kernel for a problem that is more fitting this time around.  
 - **Excel:** used to use Excel a lot until 7-8 years ago, will use pure formulas, no macros. 
-- **Julia:** new language for me, but heard a lot of great things about it. 
+- **Julia:** also new for me, but heard a lot of great things about it. 
 - **Marimo:** definitely a flex pick, replaced all my EDA notebooks and light UI with Marimo, goal is to use the interactive nature of Marimo for a problem that is suited for it (like day 8 '22). 
 - **MATLAB:** used this 15 years ago for the last time, liked it then.  
 - **NetworkX:** went deep into networkx last year and really enjoyed getting back into graph algorithms.  
