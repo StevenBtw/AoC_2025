@@ -13,7 +13,7 @@ A different tool (software, language or library) for each day.
 | ~~Bash~~ | CUDA | ~~Excel~~ |
 | Julia | Marimo | MATLAB |
 | NetworkX | OpenVINO | OR-Tools |
-| Rust | SQL | WebGPU |
+| Rust | ~~SQL~~ | WebGPU |
 
 ---
 ## Picks 
@@ -41,7 +41,7 @@ A different tool (software, language or library) for each day.
 |-----|------|-----------|------------|---------|
 | [1](day1/)   | Excel | Good problem to tick off excel reused most for part 2 | Easy  | 13/15    |
 | [2](day2/) | Bash | Used Termux on android, part 1 was straightforward, got stuck a bit on part 2, mainly because long processing time complicated it  |   Easy    |  19/54    |
-| 3   | ?    |           |            |         |
+| [3](day3/)   | SQL  |           |            |         |
 | 4   | ?    |           |            |         |
 | 5   | ?    |           |            |         |
 | 6   | ?    |           |            |         |
