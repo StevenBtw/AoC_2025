@@ -41,7 +41,7 @@ A different tool (software, language or library) for each day.
 |-----|------|-----------|------------|---------|
 | [1](day1/)   | Excel | Good problem to tick off excel reused most for part 2 | Easy  | 13/15    |
 | [2](day2/) | Bash | Used Termux on android, part 1 was straightforward, got stuck a bit on part 2, mainly because long processing time complicated it  |   Easy    |  19/54    |
-| [3](day3/)   | SQL  |           |            |         |
+| [3](day3/)   | SQL  | Should have been easy, and part 1 was ok, not understanding that part 2 will take a lot of time using SQL (self join) made me break off executing queries after a few minutes each time, currently running of on my earlier iterations of part 2, that should work, fingers crossed | Medium |  33/tbd |
 | 4   | ?    |           |            |         |
 | 5   | ?    |           |            |         |
 | 6   | ?    |           |            |         |
