@@ -42,7 +42,7 @@ A different tool (software, language or library) for each day.
 | [1](day1/)   | Excel | Good problem to tick off excel reused most for part 2 | Easy  | 13/15    |
 | [2](day2/) | Bash | Used Termux on android, part 1 was straightforward, got stuck a bit on part 2, mainly because long processing time complicated it  |   Easy    |  19/54    |
 | [3](day3/)   | SQL  | Should have been easy, and part 1 was ok, but didnt translate to at all to part 2, so wasted a lot of time, even tried batching adapted part1 script before using subqueries | Medium |  33/96 |
-| 4   | MATLAB | Counting neighbors in a grid was nice with MATLAB will tackle part 2 tonight |   | 32/ |
+| 4   | MATLAB | Besides Matlab's weird syntax this was very straightforward| Easy | 32/52 |
 | 5   | ?    |           |            |         |
 | 6   | ?    |           |            |         |
 | 7   | ?    |           |            |         |
