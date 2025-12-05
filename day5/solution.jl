@@ -57,3 +57,6 @@ missing_count = count_not_in_ranges(numbers, merged)
 fresh_count = length(numbers) - missing_count
 println(fresh_count)
 
+fresh_total = sum(b - a + 1 for (a, b) in merged)
+
+println(fresh_total)
