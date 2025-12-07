@@ -16,9 +16,9 @@
     .status { color: #888; }
     .error { color: #f55; }
 
-    #data { overflow-x: auto; padding-bottom: 10px; }
-    .problems-grid { display: inline-block; }
-    .row { display: flex; white-space: nowrap; }
+    #data { max-height: 70vh; overflow-y: auto; padding-bottom: 10px; }
+    .problems-grid { display: flex; flex-wrap: wrap; gap: 8px; align-items: flex-end; }
+    .problem-col { display: flex; flex-direction: column; align-items: stretch; }
     .cell {
       min-width: 45px;
       padding: 2px 4px;
@@ -29,10 +29,7 @@
       margin: 1px;
       border-radius: 2px;
     }
-    .cell.done {
-      background: #3a5a3a;
-      color: #8f8;
-    }
+    .cell.done { background: #3a5a3a; color: #8f8; }
     .cell.op {
       color: #f90;
       font-weight: bold;
@@ -45,18 +42,8 @@
       background: #1a3a1a;
       border-top: 2px solid #0a0;
     }
-    .cell.char {
-      min-width: 12px;
-      padding: 1px 2px;
-      text-align: center;
-      margin: 0;
-      border-radius: 0;
-    }
-    .cell.spacer {
-      min-width: 8px;
-      background: transparent;
-      margin: 0;
-    }
+    .cell.char { min-width: 12px; padding: 1px 2px; text-align: center; margin: 0; border-radius: 0; }
+    .char-row { display: flex; }
     .cell.processing {
       animation: gpu-beam 0.15s ease-out;
       box-shadow: 0 0 8px #0ff, inset 0 0 4px #0ff;
@@ -65,8 +52,6 @@
       0% { background: #0ff; transform: scale(1.1); }
       100% { background: inherit; transform: scale(1); }
     }
-    .row.ops { margin-top: 2px; }
-    .row.results { margin-top: 4px; }
   </style>
 </head>
 <body>
