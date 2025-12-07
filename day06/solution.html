@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AoC Day 6</title>
+  <style>
+    body { font-family: monospace; background: #1a1a2e; color: #eee; padding: 20px; }
+    .controls { margin-bottom: 20px; }
+    button { background: #4a4a6a; color: #fff; border: none; padding: 10px 20px; cursor: pointer; margin-right: 10px; }
+    button:hover { background: #6a6a8a; }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+    .toggle { display: inline-flex; background: #333; border-radius: 4px; overflow: hidden; margin-right: 20px; }
+    .toggle button { border-radius: 0; margin: 0; }
+    .toggle button.active { background: #0f0; color: #000; }
+    .timer { font-size: 24px; margin: 20px 0; }
+    .result { font-size: 32px; color: #0f0; margin: 20px 0; }
+    .status { color: #888; }
+    .error { color: #f55; }
+
+    #data { overflow-x: auto; padding-bottom: 10px; }
+    .problems-grid { display: inline-block; }
+    .row { display: flex; white-space: nowrap; }
+    .cell {
+      min-width: 45px;
+      padding: 2px 4px;
+      text-align: right;
+      color: #aaf;
+      font-size: 12px;
+      background: #2a2a4a;
+      margin: 1px;
+      border-radius: 2px;
+    }
+    .cell.done {
+      background: #3a5a3a;
+      color: #8f8;
+    }
+    .cell.op {
+      color: #f90;
+      font-weight: bold;
+      text-align: center;
+      border-top: 1px solid #555;
+    }
+    .cell.result {
+      color: #0f0;
+      font-weight: bold;
+      background: #1a3a1a;
+      border-top: 2px solid #0a0;
+    }
+    .cell.char {
+      min-width: 12px;
+      padding: 1px 2px;
+      text-align: center;
+      margin: 0;
+      border-radius: 0;
+    }
+    .cell.spacer {
+      min-width: 8px;
+      background: transparent;
+      margin: 0;
+    }
+    .cell.processing {
+      animation: gpu-beam 0.15s ease-out;
+      box-shadow: 0 0 8px #0ff, inset 0 0 4px #0ff;
+    }
+    @keyframes gpu-beam {
+      0% { background: #0ff; transform: scale(1.1); }
+      100% { background: inherit; transform: scale(1); }
+    }
+    .row.ops { margin-top: 2px; }
+    .row.results { margin-top: 4px; }
+  </style>
+</head>
+<body>
+  <h1>AoC Day 6, a visual WebGPU solution</h1>
+
+  <div class="controls">
+    <div class="toggle">
+      <button id="part1" class="active">Part 1</button>
+      <button id="part2">Part 2</button>
+    </div>
+    <button id="startBtn">Start</button>
+    <button id="stopBtn" disabled>Stop</button>
+  </div>
+
+  <div class="timer">Time: <span id="time">0.000</span>s</div>
+  <div class="result">Result: <span id="result">-</span></div>
+  <div class="status" id="status">Ready</div>
+
+  <h2>Your input data:</h2>
+  <div id="data">Loading...</div>
+
+  <script type="module" src="solution.js"></script>
+</body>
+</html>
