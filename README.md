@@ -31,7 +31,7 @@ A different tool (software, language or library) for each day.
 - **OR-Tools(Python):** it's often not ideal, but I want to solve using solvers at least once.
 - **Rust:** have been learning Rust for the last year and a half, still struggling a bit though.
 - **SQL:** SQL can JOIN this year too.
-- **WebGPU:** another new one, want to drive the puzzle state from the browser and offload heavy lifting to the GPU.
+- **WebGPU(TypeScript):** another new one, want to manage the puzzle state from the browser and offload heavy lifting to the GPU. Decided on Typescript instead of wgpu-py because I want to have a browser run demo/visualization. 
 
 </details>
 
@@ -44,8 +44,8 @@ A different tool (software, language or library) for each day.
 | [3](day3/) | SQL| Should have been easy, and part 1 was ok, but didnt translate to at all to part 2, so wasted a lot of time, even tried batching adapted part 1 script before using subqueries | Medium |  33/96 |
 | [4](day4/) | MATLAB | Besides the weird syntax and not so great documentation this was very straightforward | Easy | 32/52 |
 | [5](day5/) | Julia | Fun fact! Arrays start at 1 in Julia, part 1 took a bit longer because reading is hard and I was calculating the spoiled ID's instead, reused part 1 for part 2 | Easy |  41/52 |
-| 6   | WebGPU |   |            |         |
-| 7   | Rust |           |            |         |
+| [6](day6/) | WebGPU |   |            |         |
+| [7](day7/) | Rust |           |            |         |
 | 8   | ?    |           |            |         |
 | 9   | ?    |           |            |         |
 | 10  | ?    |           |            |         |
