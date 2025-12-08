@@ -1,4 +1,4 @@
-# Day 6 Solution quickstart guide
+# Day 6 Solution quickstart
 
 ## Run
 
