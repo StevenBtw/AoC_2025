@@ -1,0 +1,15 @@
+[project]
+name = "aoc-2025"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "altair>=6.0.0",
+    "cachetools>=6.2.2",
+    "marimo>=0.18.3",
+    "networkx>=3.6",
+    "ortools==9.14.6206",
+    "polars>=1.35.2",
+    "pycuda>=2025.1.2",
+]
