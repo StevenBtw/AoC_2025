@@ -46,7 +46,7 @@ A different tool (software, language or library) for each day.
 | [5](day5/) | Julia | Fun fact! Arrays start at 1 in Julia, part 1 took a bit longer because reading is hard and I was calculating the spoiled ID's instead, reused part 1 for part 2 | Easy |  41/52 |
 | [6](day6/) | WebGPU | That was challenging (but fun!), ran into issues for part two because I used a float32 so the calculation was actually correct, but the result not. Very happy with the end result, spend way to much time on styling | Medium | 134/208 |
 | [7](day7/) | Rust | I may have been less Rusty (or more :wink:) than I thought, initially wanted to go with a hashmap, but instead went with a simple vector solution for both 1 & 2 | Medium | 25/38 |
-| [8](day8/)   | ?    |           |            |         |
+| [8](day8/)   | Networkx   | Happy with my networkx pick, part 1 done | Easy |  12/?      |
 | [9](day9/)   | ?    |           |            |         |
 | [10](day10/)  | ?    |           |            |         |
 | [11](day11/)  | ?    |           |            |         |
