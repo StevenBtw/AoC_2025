@@ -47,7 +47,7 @@ A different tool (software, language or library) for each day.
 | [6](day06/) | WebGPU | That was challenging (but fun!), ran into issues for part two because I used a float32 so the calculation was actually correct, but the result not. Very happy with the end result, spend way too much time on styling. | Medium | 134/208 |
 | [7](day07/) | Rust | I may have been less rusty (or more) than I thought, initially wanted to go with a hashmap, but instead went with a simple set/vector solution for both 1 & 2. | Medium | 25/38 |
 | [8](day0/)   | NetworkX   | Happy with my networkx pick, used unionfind(kruskals) for both part 1 & 2, stop at 1000 edges for 1 and when connected for 2. | Easy | 12/19 |
-| [9](day09/)   | OR-Tools | I know the OR-Tools pick is not ideal, but sometimes you find a problem for your solution instead of a solution for your problem. Part 1 solved (pun intended)| Hard | 39/?  |
+| [9](day09/)   | OR-Tools | Part 1 was ok, would have been a lot easier with itertools instead of ortools. Feeding the solver the right constraints for part 2 was a challenge. Used the CP-SAT Solver and the python documentation is excellent. | Hard | 39/68 |
 | [10](day10/)  | ?    |           |            |         |
 | [11](day11/)  | ?    |           |            |         |
 | [12](day12/)  | ?    |           |            |         |
@@ -79,5 +79,10 @@ A different tool (software, language or library) for each day.
 > Obligatory 3D plot of part 1.
 
 ![Day 8 Part 1](images/d8p1.png)
+
+
+### Day 9 - OR-Tools
+
+> I know the OR-Tools pick is not ideal, but sometimes you find a problem for your solution instead of a solution for your problem.
 
 ---
