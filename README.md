@@ -57,26 +57,26 @@ A different tool (software, language or library) for each day.
 
 ### Day 1 - Excel
 
-> Formula for part 2.
+> Not so elegant but simple formula for part 2.
 
 ![Day 1 Part 2](images/d1p2.png)
 
 ### Day 3 - SQL
 
-> sub 200 ms for part 2 (was taking over 30 minutes with the adapted part 1 query).
+> Sub 200 ms for part 2 (was taking over 30 minutes with the adapted part 1 query).
 
 ![Day 3 Part 2](images/d3p2.png)
 
 ### Day 6 - WebGPU
 
-> Fully in OaC style
+> Fully in Advent of Code styling!
 
 ![Day 6 Part 1](images/d6p1.png)
 ![Day 6 Part 2](images/d6p2.png)
 
 ### Day 8 - NetworkX
 
-> Plot of part 1
+> Obligatory 3D plot of part 1.
 
 ![Day 8 Part 1](images/d8p1.png)
 
