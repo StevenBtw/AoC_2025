@@ -8,4 +8,5 @@
 */Cargo.lock
 .python-version
 uv.lock
-day08/visualize.py
+*/visualize.py
+*/__pycache__/*
