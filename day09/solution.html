@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AoC Day 9, a OR-Tools solution</title>
+    <style>
+        body { font-family: monospace; background: #1a1a2e; color: #eee; padding: 20px; }
+        h1 { color: rgb(255, 255, 255); }
+        .controls { margin-bottom: 20px; }
+        button { background: #4a4a6a; color: #fff; border: none; padding: 10px 20px; cursor: pointer; margin-right: 10px; }
+        button:hover { background: #6a6a8a; }
+        button:disabled { opacity: 0.5; cursor: not-allowed; }
+        .toggle { display: inline-flex; background: #333; border-radius: 4px; overflow: hidden; margin-right: 20px; }
+        .toggle button { border-radius: 0; margin: 0; }
+        .toggle button.active { background: #0f0; color: #000; }
+        .container { display: flex; gap: 20px; }
+        canvas { border: 1px solid #4a4a6a; background: #0a0a1a; }
+        .info { background: #2a2a4a; padding: 15px; border-radius: 4px; min-width: 280px; }
+        .info h3 { margin-top: 0; color: #0f0; border-bottom: 1px solid #555; padding-bottom: 8px; }
+        .stat { margin: 10px 0; padding: 8px; background: #1a1a2e; border-radius: 2px; }
+        .stat-label { color: #888; font-size: 11px; text-transform: uppercase; }
+        .stat-value { font-size: 20px; font-weight: bold; color: #0f0; }
+        .timer { font-size: 24px; margin: 20px 0; }
+        .result { font-size: 32px; color: #0f0; margin: 20px 0; }
+        .status { color: #888; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>AoC Day 9, a OR-Tools solution</h1>
+
+    <div class="controls">
+        <div class="toggle">
+            <button id="part1" class="active" onclick="setPart(1)">Part 1</button>
+            <button id="part2" onclick="setPart(2)">Part 2</button>
+        </div>
+        <button id="startBtn" onclick="startSolving()">Start</button>
+        <button id="stopBtn" disabled onclick="stopSolving()">Stop</button>
+    </div>
+
+    <div class="timer">Time: <span id="time">0.000</span>s</div>
+    <div class="result">Largest area: <span id="area">-</span></div>
+    <div class="status" id="status">CP-SAT Solver Ready</div>
+
+    <div class="container">
+        <canvas id="canvas" width="900" height="600"></canvas>
+        <div class="info">
+            <h3>Current Solution</h3>
+            <div class="stat">
+                <div class="stat-label">Solution #</div>
+                <div class="stat-value" id="solutionNum">-</div>
+            </div>
+            <div class="stat">
+                <div class="stat-label">Corner Tiles</div>
+                <div class="stat-value" id="corners" style="font-size:14px">-</div>
+            </div>
+            <h3>Progress</h3>
+            <canvas id="chartCanvas" width="250" height="120"></canvas>
+        </div>
+    </div>
+
+    <script>
+        const MARGIN = 50, MAX_TRAIL = 6;
+        let tilesData = null, areas = [], eventSource = null, transform = null;
+        let currentPart = 1, startTime = null, timerInterval = null, solutionHistory = [];
+        const C = { accent: '#0f0', rgb: '0,255,0', light: '#8f8' };
+
+        function setPart(p) {
+            currentPart = p;
+            document.getElementById('part1').classList.toggle('active', p === 1);
+            document.getElementById('part2').classList.toggle('active', p === 2);
+            drawTiles();
+        }
+
+        function updateTimer() {
+            if (startTime) document.getElementById('time').textContent = ((Date.now() - startTime) / 1000).toFixed(3);
+        }
+
+        fetch('/tiles_data').then(r => r.json()).then(data => { tilesData = data; computeTransform(); drawTiles(); });
+
+        function computeTransform() {
+            const canvas = document.getElementById('canvas');
+            const xs = tilesData.tiles.map(t => t[0]), ys = tilesData.tiles.map(t => t[1]);
+            const minX = Math.min(...xs), maxX = Math.max(...xs), minY = Math.min(...ys), maxY = Math.max(...ys);
+            const scaleX = (canvas.width - 2*MARGIN) / (maxX - minX), scaleY = (canvas.height - 2*MARGIN) / (maxY - minY);
+            const scale = Math.min(scaleX, scaleY);  // Uniform scale
+            const offsetX = (canvas.width - (maxX - minX) * scale) / 2;
+            const offsetY = (canvas.height - (maxY - minY) * scale) / 2;
+            transform = { scale, minX, minY, offsetX, offsetY };
+        }
+
+        function toScreen(x, y) { return [transform.offsetX + (x - transform.minX) * transform.scale, transform.offsetY + (y - transform.minY) * transform.scale]; }
+
+        function drawTiles() {
+            const canvas = document.getElementById('canvas'), ctx = canvas.getContext('2d');
+            if (!tilesData || !transform) return;
+            ctx.fillStyle = '#0a0a1a';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            if (currentPart === 2) {
+                ctx.strokeStyle = 'rgba(100,255,100,0.5)';
+                ctx.lineWidth = 1;
+                for (let i = 0; i < tilesData.tiles.length; i++) {
+                    const [sx1, sy1] = toScreen(...tilesData.tiles[i]);
+                    const [sx2, sy2] = toScreen(...tilesData.tiles[(i + 1) % tilesData.tiles.length]);
+                    ctx.beginPath(); ctx.moveTo(sx1, sy1); ctx.lineTo(sx2, sy2); ctx.stroke();
+                }
+            }
+
+            ctx.fillStyle = 'rgba(255,100,100,0.5)';
+            for (const t of tilesData.tiles) { const [sx, sy] = toScreen(t[0], t[1]); ctx.beginPath(); ctx.arc(sx, sy, 3, 0, Math.PI*2); ctx.fill(); }
+        }
+
+        function drawSolution(data) {
+            solutionHistory.push(data);
+            if (solutionHistory.length > MAX_TRAIL) solutionHistory.shift();
+            drawTiles();
+            const canvas = document.getElementById('canvas'), ctx = canvas.getContext('2d');
+
+            // Trail
+            for (let i = 0; i < solutionHistory.length - 1; i++) {
+                const h = solutionHistory[i], op = 0.15 * (1 - (solutionHistory.length - 1 - i) / MAX_TRAIL);
+                if (h.rect && op > 0.01) {
+                    const [rx1, ry1] = toScreen(h.rect.x1, h.rect.y1), [rx2, ry2] = toScreen(h.rect.x2, h.rect.y2);
+                    ctx.strokeStyle = `rgba(${C.rgb},${op*2})`; ctx.lineWidth = 1; ctx.strokeRect(rx1, ry1, rx2-rx1, ry2-ry1);
+                }
+            }
+
+            // Current
+            if (data.rect) {
+                const [rx1, ry1] = toScreen(data.rect.x1, data.rect.y1), [rx2, ry2] = toScreen(data.rect.x2, data.rect.y2);
+                ctx.fillStyle = `rgba(${C.rgb},0.2)`; ctx.fillRect(rx1, ry1, rx2-rx1, ry2-ry1);
+                ctx.strokeStyle = C.accent; ctx.lineWidth = 2; ctx.strokeRect(rx1, ry1, rx2-rx1, ry2-ry1);
+            }
+
+            ctx.fillStyle = C.accent; ctx.strokeStyle = C.light; ctx.lineWidth = 2;
+            for (const idx of data.selected_tiles) {
+                const [sx, sy] = toScreen(...tilesData.tiles[idx]);
+                ctx.beginPath(); ctx.arc(sx, sy, 8, 0, Math.PI*2); ctx.fill(); ctx.stroke();
+            }
+        }
+
+        function drawChart() {
+            const canvas = document.getElementById('chartCanvas'), ctx = canvas.getContext('2d');
+            ctx.fillStyle = '#1a1a2e'; ctx.fillRect(0, 0, canvas.width, canvas.height);
+            if (areas.length < 1) return;
+            const minA = Math.min(...areas) * 0.95, maxA = Math.max(...areas) * 1.05, range = maxA - minA || 1;
+            ctx.strokeStyle = C.accent; ctx.lineWidth = 2; ctx.beginPath();
+            for (let i = 0; i < areas.length; i++) {
+                const x = areas.length === 1 ? canvas.width/2 : (i/(areas.length-1)) * (canvas.width-20) + 10;
+                const y = canvas.height - 10 - ((areas[i] - minA) / range) * (canvas.height - 20);
+                i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+            ctx.fillStyle = C.accent;
+            for (let i = 0; i < areas.length; i++) {
+                const x = areas.length === 1 ? canvas.width/2 : (i/(areas.length-1)) * (canvas.width-20) + 10;
+                const y = canvas.height - 10 - ((areas[i] - minA) / range) * (canvas.height - 20);
+                ctx.beginPath(); ctx.arc(x, y, 4, 0, Math.PI*2); ctx.fill();
+            }
+        }
+
+        function startSolving() {
+            areas = []; solutionHistory = [];
+            document.getElementById('startBtn').disabled = true;
+            document.getElementById('stopBtn').disabled = false;
+            document.getElementById('status').textContent = 'Solving...';
+            document.getElementById('time').textContent = '0.000';
+            startTime = Date.now();
+            timerInterval = setInterval(updateTimer, 50);
+            if (eventSource) eventSource.close();
+            eventSource = new EventSource(`/solve?part=${currentPart}`);
+            eventSource.onmessage = function(e) {
+                const data = JSON.parse(e.data);
+                if (data.done) {
+                    clearInterval(timerInterval); eventSource.close();
+                    document.getElementById('startBtn').disabled = false;
+                    document.getElementById('stopBtn').disabled = true;
+                    document.getElementById('status').textContent = `Done! Status: ${data.status}`;
+                    return;
+                }
+                areas.push(data.area);
+                document.getElementById('solutionNum').textContent = data.solution_num;
+                document.getElementById('area').textContent = data.area;
+                const coords = data.selected_tiles.map(i => tilesData.tiles[i]).map(t => `(${t[0]}, ${t[1]})`).join(' & ');
+                document.getElementById('corners').textContent = coords;
+                drawSolution(data); drawChart();
+            };
+            eventSource.onerror = function() {
+                clearInterval(timerInterval);
+                document.getElementById('startBtn').disabled = false;
+                document.getElementById('stopBtn').disabled = true;
+                document.getElementById('status').textContent = 'Connection closed';
+            };
+        }
+
+        function stopSolving() {
+            clearInterval(timerInterval);
+            if (eventSource) {
+                eventSource.close();
+                document.getElementById('startBtn').disabled = false;
+                document.getElementById('stopBtn').disabled = true;
+                document.getElementById('status').textContent = 'Stopped';
+            }
+        }
+    </script>
+</body>
+</html>

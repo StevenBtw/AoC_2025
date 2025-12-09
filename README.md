@@ -53,36 +53,38 @@ A different tool (software, language or library) for each day.
 | [12](day12/)  | ?    |           |            |         |
 
 
-## Highlights
+## Highlights (contains spoilers!)
 
 ### Day 1 - Excel
 
-> Not so elegant but simple formula for part 2.
-
 ![Day 1 Part 2](images/d1p2.png)
+
+> Not so elegant but simple formula for part 2.
 
 ### Day 3 - SQL
 
-> Sub 200 ms for part 2 (was taking over 30 minutes with the adapted part 1 query).
-
 ![Day 3 Part 2](images/d3p2.png)
 
-### Day 6 - WebGPU
+> Sub 200 ms for part 2 (was taking over 30 minutes with the adapted part 1 query).
 
-> Fully in Advent of Code styling!
+### Day 6 - WebGPU
 
 ![Day 6 Part 1](images/d6p1.png)
 ![Day 6 Part 2](images/d6p2.png)
 
+> Fully in Advent of Code styling!
+
 ### Day 8 - NetworkX
 
-> Obligatory 3D plot of part 1.
 
 ![Day 8 Part 1](images/d8p1.png)
 
+> Obligatory 3D plot of part 1.
 
 ### Day 9 - OR-Tools
 
-> I know the OR-Tools pick is not ideal, but sometimes you find a problem for your solution instead of a solution for your problem.
+![alt text](images/d9p2.png)
+
+> I know the OR-Tools pick is not ideal, but sometimes you have to find a problem for your solution instead of a solution for your problem.
 
 ---
