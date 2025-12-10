@@ -48,7 +48,7 @@ A different tool (software, language or library) for each day.
 | [7](day07/) | Rust | I may have been less rusty (or more) than I thought, initially wanted to go with a hashmap, but instead went with a simple set/vector solution for both 1 & 2. | Medium | 25/38 |
 | [8](day0/)   | NetworkX   | Happy with my networkx pick, used unionfind(kruskals) for both part 1 & 2, stop at 1000 edges for 1 and when connected for 2. | Easy | 12/19 |
 | [9](day09/)   | OR-Tools | Part 1 was ok, would have been a lot easier with itertools instead of ortools. Feeding the solver the right constraints for part 2 was a challenge. Used the CP-SAT Solver and the python documentation is excellent. | Hard | 39/68 |
-| [10](day10/)  | ?    |           |            |         |
+| [10](day10/)  | CUDA | Ofcourse the perfect solver problem comes the day after shoehorning my solver pick. Brute force it is GPU will go brrrr. |            |         |
 | [11](day11/)  | ?    |           |            |         |
 | [12](day12/)  | ?    |           |            |         |
 
