@@ -15,6 +15,8 @@ A different tool (software, language or library) for each day.
 | ~~NetworkX~~ | OpenVINO | ~~OR-Tools~~ |
 | ~~Rust~~ | ~~SQL~~ | ~~WebGPU~~ |
 
+https://raw.githubusercontent.com/StevenBtw/AoC_2025/artifacts/langs_dark.svg#gh-dark-mode-only)
+
 ---
 ## Picks 
 <details>
