@@ -48,7 +48,7 @@ A different tool (software, language or library) for each day.
 | [7](day07/) | Rust | I may have been less rusty (or more) than I thought, initially wanted to go with a hashmap, but instead went with a simple set/vector solution for both 1 & 2. | Medium | 25/38 |
 | [8](day0/)   | NetworkX   | Happy with my networkx pick, used unionfind(kruskals) for both part 1 & 2, stop at 1000 edges for 1 and when connected for 2. | Easy | 12/19 |
 | [9](day09/)   | OR-Tools | Part 1 was ok, would have been a lot easier with itertools instead of ortools. Feeding the solver the right constraints for part 2 was a challenge. Used the CP-SAT Solver and the python documentation is excellent. | Hard | 39/68 |
-| [10](day10/)  | CUDA | Ofcourse the perfect solver problem comes the day after shoehorning my solver pick. Bruteforced part 1, GPU didn't even sweat, the challenge was reading comprehension. Part 2 was not bruteforcable so I tried different ways of reducing the search space before feeding it to the GPU, tried DFS, getting close with a genetic algo on CUDA before bruteforcing the space around the results from the algo, but in the end a pure GPU solution with a gaussian elimination step in the kernel worked.  | Hard | 135/>6h |
+| [10](day10/)  | CUDA | Ofcourse the perfect solver problem comes the day after shoehorning my solver pick. Bruteforced part 1, GPU didn't even sweat, the challenge was reading comprehension. Part 2 was not bruteforcable so I tried different ways of reducing the search space before feeding it to the GPU, tried DFS, getting close with a genetic algo on CUDA before bruteforcing the space around the results from the algo, but in the end a pure GPU solution with a gaussian elimination step in the kernel worked.  | Extreme | 135/>6h |
 | [11](day11/)  | ?    |           |            |         |
 | [12](day12/)  | ?    |           |            |         |
 
@@ -91,5 +91,5 @@ A different tool (software, language or library) for each day.
 
 ![alt text](images/brrrrr.png)
 
-> GPU goes BRRRRR, no  
+> GPU goes BRRRRR
 ---
