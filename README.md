@@ -13,9 +13,7 @@ A different tool (software, language or library) for each day.
 | ~~Bash~~ | ~~CUDA~~ | ~~Excel~~ |
 | ~~Julia~~ | Marimo | ~~MATLAB~~ |
 | ~~NetworkX~~ | OpenVINO | ~~OR-Tools~~ |
-| ~~Rust~~ | ~~SQL~~ | ~~WebGPU~~ |
-
-https://raw.githubusercontent.com/StevenBtw/AoC_2025/artifacts/langs_dark.svg#gh-dark-mode-only)
+| ~~Rust~~ | ~~SQL~~ | ~~WebGPU~ |
 
 ---
 ## Picks 
