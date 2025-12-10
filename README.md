@@ -10,7 +10,7 @@ A different tool (software, language or library) for each day.
 
 |      |      |      |
 |:----:|:----:|:----:|
-| ~~Bash~~ | CUDA | ~~Excel~~ |
+| ~~Bash~~ | ~~CUDA~~ | ~~Excel~~ |
 | ~~Julia~~ | Marimo | ~~MATLAB~~ |
 | ~~NetworkX~~ | OpenVINO | ~~OR-Tools~~ |
 | ~~Rust~~ | ~~SQL~~ | ~~WebGPU~~ |
