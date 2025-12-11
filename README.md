@@ -23,8 +23,8 @@ A different tool (software, language or library) for each day.
 
 
 ### Languages used:
-![](https://raw.githubusercontent.com/stevenbtw/aoc_2025/images/langs_dark.svg#gh-dark-mode-only)
-![](https://raw.githubusercontent.com/stevenbtw/aoc_2025/images/langs_light.svg#gh-light-mode-only)
+![](https://raw.githubusercontent.com/stevenbtw/aoc_2025/main/images/langs_dark.svg#gh-dark-mode-only)
+![](https://raw.githubusercontent.com/stevenbtw/aoc_2025/main/images/langs_light.svg#gh-light-mode-only)
 
 ---
 ## Picks 
