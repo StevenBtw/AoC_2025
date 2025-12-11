@@ -86,7 +86,7 @@ def analyze_repository(root_path: str) -> dict:
     language_bytes = defaultdict(int)
     
     # Languages to exclude from the final report
-    EXCLUDED_LANGUAGES = {'YAML', 'TOML', 'Markdown'}
+    EXCLUDED_LANGUAGES = {'YAML', 'TOML', 'Markdown', 'JSON'}
     
     for root, dirs, files in os.walk(root_path):
         # Remove ignored directories from the search
@@ -103,7 +103,7 @@ def analyze_repository(root_path: str) -> dict:
                     
                     # Apply Excel overhead reduction (xlsx/xls have significant XML overhead)
                     if language == 'Excel':
-                        size = int(size * 0.15)  # Reduce to ~15% to account for compression overhead
+                        size = int(size * 0.10)  # Reduce to ~10% to account for compression overhead
                     
                     language_bytes[language] += size
                 except:
@@ -146,7 +146,7 @@ def hex_to_rgb(code: str) -> list[float]:
 
 def render(path: str, colors: dict, data: dict):
     # SVG generation
-    WIDTH, HEIGHT = 410, 400
+    WIDTH, HEIGHT = 410, 500
 
     HALF_PI = 0.5 * math.pi
     TWO_PI = 2 * math.pi
