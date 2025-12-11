@@ -15,6 +15,17 @@ A different tool (software, language or library) for each day.
 | ~~NetworkX~~ | OpenVINO | ~~OR-Tools~~ |
 | ~~Rust~~ | ~~SQL~~ | ~~WebGPU~~ |
 
+### Rules:
+- Pick a new pick each day, and once picked, it cannot be used again.
+- Once a pick is locked in, it cannot be changed anymore, even if part 2 doesn't suit the pick.
+- No AI autocomplete allowed, with the exception of generating HTML. 
+- Maximize learning and fun, speed is not relevant.
+
+
+### Languages used:
+![](https://raw.githubusercontent.com/stevenbtw/aoc_2025/images/langs_dark.svg#gh-dark-mode-only)
+![](https://raw.githubusercontent.com/stevenbtw/aoc_2025/images/langs_light.svg#gh-light-mode-only)
+
 ---
 ## Picks 
 <details>
