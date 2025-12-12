@@ -9,4 +9,6 @@
 */__pycache__/*
 .python-version
 uv.lock
-day12/model_cache/*
+day12/shape_detector.bin
+day12/kernel_metadata.json
+day12/shape_detector.xml

@@ -94,17 +94,22 @@ A different tool (software, language or library) for each day.
 
 ### Day 9 - OR-Tools
 
-![alt text](images/d9p2.png)
+![Day 9 Part 2](images/d9p2.png)
 
 > I know the OR-Tools pick is not ideal, but sometimes you have to find a problem for your solution instead of a solution for your problem. (aged like milk)
 
 ### Day 10 - CUDA 
 
-![alt text](images/brrrrr.png)
+![BRRRR](images/brrrrr.png)
 
 > GPU goes BRRRRR
 
 ### Day 12 - OpenVINO
 
-> My NPU is finally fulfilling its destiny: Tetris but with extra steps.
+<p align="center">
+<img src="images/d12fit.gif" width="48%" alt="FIT">
+<img src="images/d12nofit.gif" width="48%" alt="No FIT">
+</p>
+
+> Convolutions, not just for detecting cats anymore.
 ---
