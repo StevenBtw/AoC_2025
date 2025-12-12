@@ -2,8 +2,6 @@
 
 A different tool (software, language or library) for each day.
 
----
-
 ## Bingo Card
 
 12 days, 12 options, pick wisely.
@@ -113,3 +111,15 @@ A different tool (software, language or library) for each day.
 
 > Convolutions, not just for detecting cats anymore.
 ---
+
+## Retrospective
+
+Finished all 12 days with the constraint mainly intact! Here are some of my takeaways:
+
+**What worked:** The forced Bingo Card challenge meant I actually touched things I'd been meaning to learn for years. The "no changing picks after Part 2" rule created a really intense learning experiences. Day 10 with CUDA would have been much easier with something else, but pushing through taught me more than changing would have. Trying solutions while listening to a notebooklm podcast of the cuda programming guide will be a nice memory of OaC this year. 
+
+**Hard things:** Troubleshooting the precision error with WebGPU, the matrix row reduction approach for Day 10, and rethinking OpenVINO convolutions for constraint satisfaction today (I didn't just take shape detection to literal). All of these brought back real problem solving fun, out-of-the-box thinking and not just identifying the correct python package. 
+
+**Easy things:** A lot of the CUDA, WebGPU, and OpenVINO code is copied straight from the documentation with my logic hacked into it. Some solutions probably look more polished than my actual knowledge of these tools. I also didn't want to use generative AI for the entire period, it's very refreshing (and humbling) to turn everthing off and relearn how to code for two weeks, but when I couldnt be bothered with writing HTML I only wrote comments and pressed tab for everything (both day 6 and 9). And I did use chatGPT and notebooklm to help me learn new concepts. 
+
+**For next time:** Probably only Python & Rust, and try different techniques/packages, maybe use Marimo notebooks starting with some EDA each day. 
