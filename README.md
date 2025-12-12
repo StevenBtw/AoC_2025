@@ -173,9 +173,7 @@ uv run python day12/run_inference.py input.txt
 
 ## Retrospective
 
-### Clocked in a little over 19 hours in total, but finished all 12 days with the constraint intact!
-
-**Here are some of my takeaways:**
+**Here are some of my takeaways after almost 20 hours and 23 solutions:**
 
 **What worked:** The forced Bingo Card challenge meant I actually touched things I'd been meaning to pick up (again) for years. The "no changing picks for Part Two" rule created a really intense learning experience. Day 10 with CUDA would have been much easier with something else, but pushing through taught me more than changing would have. Trying weird solutions while listening to a notebooklm podcast of the cuda programming guide will be one of the nice memories of Advent of Code this year. Having only 12 days for this challenge was good, 25 days was pretty taxing already using the go-to python solutions last year, I cannot imagine doing this for another 13 days.
 
