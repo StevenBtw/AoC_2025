@@ -1,17 +1,10 @@
 # Advent of Code 2025
 
- 
-
 A different tool (software, language or library) for each day.
-
- 
 
 ## Bingo Card
 
- 
-
 12 days, 12 options, pick wisely.
-
 
 |      |      |      |
 |----|----|----|
@@ -19,7 +12,6 @@ A different tool (software, language or library) for each day.
 | ~~Julia~~ | ~~Marimo~~ | ~~MATLAB~~ |
 | ~~NetworkX~~ | ~~OpenVINO~~ | ~~OR-Tools~~ |
 | ~~Rust~~ | ~~SQL~~ | ~~WebGPU~~ |
-
 
 ---
 
@@ -30,16 +22,12 @@ A different tool (software, language or library) for each day.
 - No AI autocomplete allowed, with the exception of generating HTML.
 - Maximize learning and fun, speed is not relevant.
 
-
 ---
 
 ### Languages used
 
 ![](https://raw.githubusercontent.com/stevenbtw/aoc_2025/main/images/langs_dark.svg#gh-dark-mode-only)
-
 ![](https://raw.githubusercontent.com/stevenbtw/aoc_2025/main/images/langs_light.svg#gh-light-mode-only)
-
- 
 
 ## Log
 
@@ -53,10 +41,10 @@ A different tool (software, language or library) for each day.
 | [6](day06/) | WebGPU | That was challenging (but fun!), ran into issues for part two because I used a float32 so the calculation was actually correct, but the result not. Very happy with the end result, spend way too much time on styling. | Medium | 134/208 |
 | [7](day07/) | Rust | I may have been less rusty (or more) than I thought, initially wanted to go with a hashmap, but instead went with a simple set/vector solution for both 1 & 2. | Medium | 25/38 |
 | [8](day08/)   | NetworkX   | Happy with my networkx pick, used unionfind(kruskals) for both part 1 & 2, stop at 1000 edges for 1 and when connected for 2. | Easy | 12/19 |
-| [9](day09/)   | OR-Tools | Part 1 was ok, would have been a lot easier with itertools instead of ortools. Feeding the solver the right constraints for part 2 was a challenge. Used the CP-SAT Solver and the python documentation is excellent. | Hard | 39/68 |
-| [10](day10/)  | CUDA | Ofcourse the perfect solver problem comes the day after shoehorning my solver pick. Bruteforced part 1, GPU didn't even sweat, the challenge was reading comprehension. Part 2 was not bruteforcable so I tried different ways of reducing the search space before feeding it to the GPU, tried DFS, getting close with a genetic algo on CUDA before bruteforcing the space around the results from the algo, but in the end a pure GPU solution with a gaussian elimination step in the kernel worked.  | Extreme | 135/>6h |
+| [9](day09/)   | OR-Tools | Part 1 was ok, would have been a lot easier with itertools instead of ortools. Feeding the solver the right constraints for part 2 was a challenge. Used the CP-SAT Solver and the documentation was very helpful. | Hard | 39/68 |
+| [10](day10/)  | CUDA | Ofcourse the perfect solver problem comes the day after shoehorning my solver pick. Bruteforced part 1, GPU didn't even sweat, the challenge was reading comprehension. Part 2 was not bruteforcable so I tried different ways of reducing the search space before feeding it to the GPU, tried DFS, getting close with a genetic algo on CUDA before bruteforcing the space around the results from the algo, but in the end a pure GPU solution with a matrix row reduction step in the kernel worked. | Extreme | 135/>6h |
 | [11](day11/)  | Marimo | Played around with altair, was hoping for a bit more interactivity opportunities in part 2. | Easy | 37/54  |
-| [12](day12/)  | OpenVINO | Used 2D convolutions to detect valid piece placements, treating shapes as kernels and the board as a tensor, effectively abusing computer vision for a constraint satisfaction problem. Had to think outside of the box a bit to fit OpenVINO in the solution. | Hard| 110 |
+| [12](day12/)  | OpenVINO | Used convolutions to detect valid piece placements, treating shapes as kernels and the board as a tensor, effectively abusing computer vision for a constraint satisfaction problem. Had to really rephrame the problem to fit OpenVINO in the solution. | Hard| 110 |
 
 ---
 
@@ -185,12 +173,14 @@ uv run python day12/run_inference.py input.txt
 
 ## Retrospective
 
-**Finished all 12 days with the constraint intact! Here are some of my takeaways:**
+### Clocked in a little over 19 hours in total, but finished all 12 days with the constraint intact!
 
-**What worked:** The forced Bingo Card challenge meant I actually touched things I'd been meaning to learn for years. The "no changing picks after Part 2" rule created a really intense learning experiences. Day 10 with CUDA would have been much easier with something else, but pushing through taught me more than changing would have. Trying weird solutions while listening to a notebooklm podcast of the cuda programming guide will be a nice memory of Advent of Code this year. Having only 12 days for this challenge was good, 25 days was pretty taxing already using the obvious python solutions last year, I cannot imagine doing this for another 13 days.
+**Here are some of my takeaways:**
 
-**Hard things:** Troubleshooting the precision error with WebGPU, the matrix row reduction approach for Day 10, and rethinking OpenVINO convolutions for constraint satisfaction today (or taking shape detection to literal). All of these brought back real problem solving fun, out-of-the-box thinking and not just identifying the correct python package. Another hard thing was to not bloat this readme with too many dad jokes, yes this is me constraining myself.
+**What worked:** The forced Bingo Card challenge meant I actually touched things I'd been meaning to pick up (again) for years. The "no changing picks for Part Twooneone" rule created a really intense learning experience. Day 10 with CUDA would have been much easier with something else, but pushing through taught me more than changing would have. Trying weird solutions while listening to a notebooklm podcast of the cuda programming guide will be one of the nice memories of Advent of Code this year. Having only 12 days for this challenge was good, 25 days was pretty taxing already using the go-to python solutions last year, I cannot imagine doing this for another 13 days.
 
-**Easy things:** A lot of the CUDA, WebGPU, and OpenVINO code is copied straight from the documentation with my logic hacked into it. Some solutions probably look more polished than my actual knowledge of these tools. I also didn't want to use generative AI for the entire period, it's very refreshing (and humbling) to turn everthing off and relearn how to code for two weeks, but when I couldnt be bothered with writing HTML I only wrote comments and pressed tab for everything (both day 6 and 9). And I did use chatGPT and notebooklm to help me learn new concepts.
+**Hard things:** Troubleshooting the precision error with WebGPU, the matrix row reduction approach for Day 10, and rethinking OpenVINO convolutions for constraint satisfaction. All of these brought back real problem solving fun, out-of-the-box thinking and not just identifying the correct python package. Another hard thing was to not bloat this readme with too many jokes, yes, this is me constraining myself.
 
-**For next time:** Probably only Python & Rust, and try different techniques/packages, maybe use Marimo notebooks starting with some EDA each day, check the [lazy solution](day12/lazysolution/solution.py) why this can be helpfull.
+**Easy things:** A lot of the CUDA, WebGPU, and OpenVINO code is copied straight from the documentation with my logic hacked into it. Some solutions probably look more polished than my actual knowledge of these tools. I also didn't want to use generative AI for the entire period, it's very refreshing (and humbling) to turn everthing off and relearn how to code for two weeks. But when I couldn't be bothered with writing HTML I only wrote comments and pressed tab for everything (both day 6 and 9). And I did use chatGPT and notebooklm to help me learn new concepts which made things easier for sure. 
+
+**For next time:** Probably only Python & Rust, and try different techniques/packages, maybe use Marimo notebooks starting with some EDA each day, check the [lazy solution](day12/lazysolution/solution.py) why this can be helpful.
