@@ -1,3 +1,5 @@
+# taken from https://github.com/viandoxdev/aoc/blob/main/langs.py and adopted for my repo
+
 import os
 import json
 import yaml
