@@ -53,7 +53,7 @@ A different tool (software, language or library) for each day.
 <details>
 <summary><strong>Why did I pick these tools?</strong></summary>
 
-- **Bash:** used bash a lot over the last years and want to try some parsing with it.
+- **Bash:** used Bash a lot over the last years and want to try some parsing with it.
 
 - **CUDA(Python):** new for me, brute-forced day 11 last year (blinking intensifies) using CuPy and actually had a lot of fun, want to try and write my own kernel for a problem that is better fitting this time around.
 
