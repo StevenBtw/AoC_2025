@@ -148,7 +148,7 @@ A different tool (software, language or library) for each day.
 ## Quickstart
 
 <details>
-<summary><strong>How to run the Python solutions yourself</strong></summary>
+<summary><strong>How to run the solutions yourself</strong></summary>
 
 ### Requirements
 - Python 3.13+
