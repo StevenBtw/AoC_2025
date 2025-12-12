@@ -9,3 +9,4 @@
 */__pycache__/*
 .python-version
 uv.lock
+day12/model_cache/*
