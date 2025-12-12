@@ -1,7 +1,3 @@
-#!/usr/bin/env python3
-# Script to generate language stats on the repo - pure Python version
-# No Ruby dependencies required!
-
 import os
 import json
 import yaml
@@ -86,7 +82,7 @@ def analyze_repository(root_path: str) -> dict:
     language_bytes = defaultdict(int)
     
     # Languages to exclude from the final report
-    EXCLUDED_LANGUAGES = {'YAML', 'TOML', 'Markdown', 'JSON'}
+    EXCLUDED_LANGUAGES = {'YAML', 'TOML', 'Markdown', 'JSON', 'HTML'}
     
     for root, dirs, files in os.walk(root_path):
         # Remove ignored directories from the search

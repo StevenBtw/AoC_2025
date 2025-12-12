@@ -12,7 +12,7 @@ A different tool (software, language or library) for each day.
 |:----:|:----:|:----:|
 | ~~Bash~~ | ~~CUDA~~ | ~~Excel~~ |
 | ~~Julia~~ | ~~Marimo~~ | ~~MATLAB~~ |
-| ~~NetworkX~~ | OpenVINO | ~~OR-Tools~~ |
+| ~~NetworkX~~ | ~~OpenVINO~~ | ~~OR-Tools~~ |
 | ~~Rust~~ | ~~SQL~~ | ~~WebGPU~~ |
 
 ### Rules:
@@ -61,7 +61,7 @@ A different tool (software, language or library) for each day.
 | [9](day09/)   | OR-Tools | Part 1 was ok, would have been a lot easier with itertools instead of ortools. Feeding the solver the right constraints for part 2 was a challenge. Used the CP-SAT Solver and the python documentation is excellent. | Hard | 39/68 |
 | [10](day10/)  | CUDA | Ofcourse the perfect solver problem comes the day after shoehorning my solver pick. Bruteforced part 1, GPU didn't even sweat, the challenge was reading comprehension. Part 2 was not bruteforcable so I tried different ways of reducing the search space before feeding it to the GPU, tried DFS, getting close with a genetic algo on CUDA before bruteforcing the space around the results from the algo, but in the end a pure GPU solution with a gaussian elimination step in the kernel worked.  | Extreme | 135/>6h |
 | [11](day11/)  | Marimo | Played around with altair, was hoping for a bit more interactivity opportunities in part 2. | Easy | 37/54  |
-| [12](day12/)  | ?    |           |            |         |
+| [12](day12/)  | OpenVINO | Gonna try to train a small cnn on synthetic data, generated from the example, effectively using ML to solve a constraint satisfaction problem. Gonna be fun! |            |         |
 
 
 ## Highlights (contains spoilers!)
