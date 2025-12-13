@@ -19,7 +19,7 @@ A different tool (software, language, or library) for each day.
 
 - Pick a new pick each day, and once picked, it cannot be used again.
 - Once a pick is locked in, it cannot be changed anymore, even if part 2 doesn't suit the pick.
-- No AI autocomplete allowed, with the exception of generating HTML.
+- No AI autocomplete allowed, with the exception of generating markup.
 - Maximize learning and fun, speed is not relevant.
 
 ---
@@ -131,6 +131,12 @@ A different tool (software, language, or library) for each day.
 
 > Convolutions, not just for detecting cats anymore.
 
+### Bonus 
+
+![lazysolution](day12/lazysolution/d12lazy.png)
+
+> While creating the visuals for day 12, I noticed there are no edge cases where it takes a lot of backtracking to find a fit, it either fits in the first run, or stays stuck around 81% fill and keeps backtracking. This plot shows that the last day may have been the easiest for people that started with some EDA. But I think the puzzle would have been better with a distribution around the edge cases. 
+
 </details>
 
 ## Quickstart
@@ -152,11 +158,28 @@ uv sync
 
 ### Run a solution
 ```bash
-uv run python day03/solution.py
-uv run python day10/part1.py
-uv run python day10/part2.py
+# Day 3
+uv run day03/setup_db.py
+uv run day03/write_input_to_sql.py
+# Then run the part1.sql and part2.sql on the duck.db instance
+
+# Day 8
+uv run day08/solution.py
+
+# Day 9
+uv run day09/solution.py
+
+# Day 10
+uv run day10/part1.py
+uv run day10/part2.py
+
+# Day 11
 uv run marimo edit day11/notebook.py
-uv run python day12/run_inference.py input.txt
+
+# Day 12
+uv run day12/create_model.py
+uv run day12/run_inference.py input.txt
+
 ```
 
 ### Non-Python days
@@ -175,11 +198,11 @@ uv run python day12/run_inference.py input.txt
 
 **Here are some of my takeaways after almost 20 hours and 23 solutions:**
 
-**What worked:** The forced Bingo Card challenge meant I actually touched things I'd been meaning to pick up (again) for years. The "no changing picks for Part Two" rule created a really intense learning experience. Day 10 with CUDA would have been much easier with something else, but pushing through taught me more than changing would have. Trying weird solutions while listening to a notebooklm podcast of the cuda programming guide will be one of the nice memories of Advent of Code this year. Having only 12 days for this challenge was good, 25 days was pretty taxing already using the go-to python solutions last year, I cannot imagine doing this for another 13 days.
+**What worked:** The forced Bingo Card challenge meant I actually touched things I'd been meaning to pick up (again) for years. The "no changing picks for Part Two" rule created a really intense learning experience. Day 10 with CUDA would have been much easier with something else, but pushing through taught me more than changing would have. Trying weird solutions while listening to a notebooklm podcast of the cuda programming guide will be one of the nice memories of Advent of Code this year. Having only 12 days for this year's challenge was actually good, 25 days was pretty long last time even with using the go-to python solutions, I am ok with not doing this challenge for another 13 days.
 
 **Things that made it hard:** Troubleshooting the precision error with WebGPU, the matrix row reduction approach for Day 10, and rethinking OpenVINO convolutions for constraint satisfaction. All of these brought back real problem solving fun, out-of-the-box thinking and not just identifying the correct python package. 
 
 **Things that made it easy:** A lot of the CUDA, WebGPU, and OpenVINO code is copied straight from the documentation with my logic hacked into it. Some solutions probably look more polished than my actual knowledge of these tools. 
-I also wanted to avoid using generative AI during the challenge and mostly succeeded. It was refreshing, to turn everything off and write code fully by hand. The only exception was HTML for some visualizations on days 6 and 9, where I used autocomplete to generate the markup. Aside from that, I did use ChatGPT and NotebookLM purely as learning aids to understand new concepts
+I also wanted to avoid using generative AI during the challenge and mostly succeeded. It was refreshing, to turn everything off and write code fully by hand. The only exception was HTML for some visualizations on days 6 and 9, where I used autocomplete to generate the markup. I also used ChatGPT and NotebookLM as learning tools to understand new and old concepts. For the last day I used the CPU and didn't use my Neural Compute Stick 2, support ended a long time ago and I didn't feel like package management hell which also made the challenge a bit easier to be fair. 
 
 **For next time:** Probably only Python & Rust, and try different techniques/packages, maybe use Marimo notebooks starting with some EDA each day, check the [lazy solution](day12/lazysolution/solution.py) why this can be helpful.

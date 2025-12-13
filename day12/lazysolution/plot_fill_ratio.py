@@ -1,8 +1,9 @@
 import matplotlib
-matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+matplotlib.use('Agg')
+plt.style.use('dark_background')
 
-with open("input.txt") as f:
+with open("../input.txt") as f:
     content = f.read()
 
 parts = content.split("\n\n")
@@ -38,5 +39,5 @@ plt.xlabel("Shape area / Section area")
 plt.ylabel("Count")
 plt.title("Distribution of fill ratios")
 plt.tight_layout()
-plt.savefig("fill_ratio.png")
+plt.savefig("d12lazy.png")
 print(f"< 1.0: {len(left)} (avg {avg_left:.3f}), >= 1.0: {len(right)} (avg {avg_right:.3f})")
