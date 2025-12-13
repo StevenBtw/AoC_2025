@@ -1,7 +1,5 @@
-"""Day 12: Animated visualization for shape packing puzzles."""
-
-import argparse
 import time
+import argparse
 import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
@@ -10,7 +8,6 @@ from run_inference import get_valid_placements
 from pathlib import Path
 from run_inference import parse_input, compile_model, load_metadata
 from create_model import main as create_model
-
 matplotlib.use('Agg')
 plt.style.use('dark_background')
 
@@ -30,7 +27,6 @@ def sample_buildup(placements, max_frames=BUILDUP_FRAMES):
         return [placements[:i] for i in range(1, n + 1)]
     indices = [int(i * n / max_frames) for i in range(1, max_frames + 1)]
     return [placements[:i] for i in indices]
-
 
 def solve_with_history(region, shapes_data, request, kernels_by_shape, timeout=30, skip=1):
     w, h = region['width'], region['height']
@@ -90,7 +86,6 @@ def solve_with_history(region, shapes_data, request, kernels_by_shape, timeout=3
 
     return history, shapes_data, (h, w), success
 
-
 def create_frame(ax, placements, shapes_data, board_size):
     ax.clear()
     h, w = board_size
@@ -112,7 +107,6 @@ def create_frame(ax, placements, shapes_data, board_size):
     ax.set_xlim(-0.5, w - 0.5)
     ax.set_ylim(h - 0.5, -0.5)
     ax.axis('off')
-
 
 def create_animation(history, shapes_data, board_size, output_path, fps=8, solved=True):
     if len(history) > TOTAL_FRAMES:
@@ -143,8 +137,7 @@ def create_animation(history, shapes_data, board_size, output_path, fps=8, solve
     anim = FuncAnimation(fig, update, frames=len(history) + hold_frames, interval=1000//fps)
     anim.save(output_path, writer=PillowWriter(fps=fps))
     plt.close()
-    print(f"Saved {output_path} ({TOTAL_FRAMES} frames)")
-
+    print(f"Saved {output_path} ({TOTAL_FRAMES} frames)") 
 
 def main():
     parser = argparse.ArgumentParser(description='Day 12 visualization')
