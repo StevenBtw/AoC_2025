@@ -1,6 +1,6 @@
 # Advent of Code 2025
 
-A different tool (software, language, or library) for each day.
+A different tool (software, language, or package) for each day.
 
 ## Bingo Card
 
@@ -203,7 +203,7 @@ uv run day12/run_inference.py input.txt
 
 **Things that made it hard:** Troubleshooting the precision error with WebGPU, the matrix row reduction approach for Day 10, and rethinking OpenVINO convolutions for constraint satisfaction. All of these brought back real problem solving fun, out-of-the-box thinking and not just identifying the correct python package. 
 
-**Things that made it easy:** A lot of the CUDA, WebGPU, and OpenVINO code is copied straight from the documentation with my logic hacked into it. Some solutions probably look more polished than my actual knowledge of these tools. 
+**Things that made it easy:** Using the correct picks for the first days helped. And the graph puzzles didn't really offer any challenge this year. I also copied the CUDA, WebGPU, and OpenVINO code straight from the documentation and just hacked my logic into it. Some solutions probably look more polished than my actual knowledge of these tools. 
 I also wanted to avoid using generative AI during the challenge and mostly succeeded. It was refreshing, to turn everything off and write code fully by hand. The only exception was HTML for some visualizations on days 6 and 9, where I used autocomplete to generate the markup. I also used ChatGPT and NotebookLM as learning tools to understand new and old concepts. For the last day I used the CPU and didn't use my Neural Compute Stick 2, support ended a long time ago and I didn't feel like package management hell which also made the challenge a bit easier to be fair. 
 
 **For next time:** Probably only Python & Rust, and try different techniques/packages, maybe use Marimo notebooks starting with some EDA each day, check the [lazy solution](day12/lazysolution/solution.py) why this can be helpful.
