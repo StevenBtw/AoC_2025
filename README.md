@@ -186,7 +186,8 @@ uv run day12/run_inference.py input.txt
 | Day | How to run |
 |-----|------------|
 | 1 | Open `day01/solution.xlsx` in Excel |
-| 2 | `bash day02/solution.sh` |
+| 2 | `bash day02/part1.sh` |
+|   | `bash day02/part2.sh` |
 | 4 | Open `day04/solution.m` in MATLAB |
 | 5 | `julia day05/solution.jl` |
 | 6 | See [day06/README.md](day06/README.md) (requires Node.js + WebGPU browser) |
