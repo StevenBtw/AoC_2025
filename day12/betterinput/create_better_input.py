@@ -41,16 +41,22 @@ def calculate_counts(W, H, ratio, target_fill):
     counts = [max(3, int(r * scale + random.uniform(-0.5, 0.5))) for r in ratio]
     return counts
 
-def generate_region(fits):
+def generate_region(fits, difficulty="tricky"):
     W = random.randint(36, 50)
     H = random.randint(36, 50)
 
     if fits:
         ratio = random.choice(DENSE_CLUSTERS)
-        target_fill = random.uniform(0.82, 0.87)
+        if difficulty == "easy":
+            target_fill = random.uniform(0.70, 0.80)  # Easy fit: low fill
+        else:
+            target_fill = random.uniform(0.82, 0.87)  # Tricky fit
     else:
         ratio = random.choice(SPARSE_CLUSTERS)
-        target_fill = random.uniform(0.82, 0.87)
+        if difficulty == "easy":
+            target_fill = random.uniform(0.92, 0.98)  # Easy no-fit: high fill
+        else:
+            target_fill = random.uniform(0.82, 0.87)  # Tricky no-fit
 
     counts = calculate_counts(W, H, ratio, target_fill)
     actual_cells = sum(c * s for c, s in zip(counts, SHAPE_CELLS))
@@ -62,13 +68,23 @@ def main():
     regions = []
     num_fit = random.randint(300, 700)
     num_nofit = 1000 - num_fit
+    num_easy_fit = int(num_fit * 0.3)
+    num_easy_nofit = int(num_nofit * 0.3)
 
-    for _ in range(num_fit):
-        W, H, counts, fill = generate_region(fits=True)
+    for _ in range(num_easy_fit):
+        W, H, counts, fill = generate_region(fits=True, difficulty="easy")
         regions.append((W, H, counts, True, fill))
 
-    for _ in range(num_nofit):
-        W, H, counts, fill = generate_region(fits=False)
+    for _ in range(num_fit - num_easy_fit):
+        W, H, counts, fill = generate_region(fits=True, difficulty="tricky")
+        regions.append((W, H, counts, True, fill))
+
+    for _ in range(num_easy_nofit):
+        W, H, counts, fill = generate_region(fits=False, difficulty="easy")
+        regions.append((W, H, counts, False, fill))
+
+    for _ in range(num_nofit - num_easy_nofit):
+        W, H, counts, fill = generate_region(fits=False, difficulty="tricky")
         regions.append((W, H, counts, False, fill))
 
     random.shuffle(regions)
