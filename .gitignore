@@ -12,3 +12,5 @@ uv.lock
 day12/shape_detector.bin
 day12/kernel_metadata.json
 day12/shape_detector.xml
+day12/betterinput/precalculate.py
+day12/v2/*

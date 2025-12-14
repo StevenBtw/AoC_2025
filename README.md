@@ -137,6 +137,10 @@ A different tool (software, language, or package) for each day.
 
 > While creating the visuals for day 12, I noticed there are no edge cases where it takes a lot of backtracking to find a fit, it either fits in the first run, or stays stuck around 81% fill and keeps backtracking. This plot shows that the last day may have been the easiest for people that started with some EDA. But I think the puzzle would have been better with a distribution around the edge cases. 
 
+> If you want to try your solution on a better distributed dataset, you can check out my [betterinput](day12\betterinput) script, this will generate a much harder version of the input that will not work [lazysolution](day12\lazysolution).
+
+
+
 </details>
 
 ## Quickstart
